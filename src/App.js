@@ -1,6 +1,9 @@
 // import logo from "./logo.svg";
 import { useState } from "react";
 import "./App.css";
+import Game from "./Game";
+import Whynow from "./Whynow";
+import TicTacToe from "./TicTacToe";
 
 function MyButton() {
   return <button>I'm a button</button>;
@@ -113,6 +116,9 @@ function App() {
         <ShoppingList />
         <AnotherButton />
         <ButtonTwo />
+        <Game />
+        <Whynow />
+        <TicTacToe />
       </header>
     </div>
   );
