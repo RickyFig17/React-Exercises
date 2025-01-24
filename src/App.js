@@ -4,6 +4,8 @@ import "./App.css";
 import Game from "./Game";
 import Whynow from "./Whynow";
 import TicTacToe from "./TicTacToe";
+import Navbar from "./Navbar";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 function MyButton() {
   return <button>I'm a button</button>;
@@ -101,18 +103,24 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <TittleMessage />
-        <MyButton />
-        <DisplayMath />
-        <AnotherRandomMessage />
-        <AboutPage />
-        <DataDisplay />
-        <ShoppingList />
-        <AnotherButton />
-        <ButtonTwo />
-        <Game />
-        <Whynow />
-        <TicTacToe />
+        <Router>
+          <TittleMessage />
+          <Navbar />
+          <Routes>
+            <Route path="/thinkingreact" element={<Navbar />} />
+          </Routes>
+          <MyButton />
+          <DisplayMath />
+          <AnotherRandomMessage />
+          <AboutPage />
+          <DataDisplay />
+          <ShoppingList />
+          <AnotherButton />
+          <ButtonTwo />
+          <Game />
+          <Whynow />
+          <TicTacToe />
+        </Router>
       </header>
     </div>
   );
