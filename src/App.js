@@ -6,6 +6,7 @@ import Whynow from "./Whynow";
 import TicTacToe from "./TicTacToe";
 import Navbar from "./Navbar";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import ThinkingInReact from "./ThinkingReact";
 
 function MyButton() {
   return <button>I'm a button</button>;
@@ -120,6 +121,7 @@ function App() {
           <Game />
           <Whynow />
           <TicTacToe />
+          <ThinkingInReact />
         </Router>
       </header>
     </div>
