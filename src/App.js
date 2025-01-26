@@ -6,7 +6,15 @@ import Game from "./Game";
 import Whynow from "./Whynow";
 import TicTacToe from "./TicTacToe";
 import Navbar from "./Navbar";
-import { BrowserRouter as Router, Route, Routes, RouterProvider,createBrowserRouter, Outlet } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  RouterProvider,
+  createBrowserRouter,
+  Outlet,
+  BrowserRouter,
+} from "react-router-dom";
 import ThinkingInReact from "./ThinkingReact";
 
 function MyButton() {
@@ -101,49 +109,32 @@ function ButtonTwo() {
   return <button onClick={handleClick}>Clicked {count} times</button>;
 }
 
-const router = createBrowserRouter([
-  {
-    path: '/',
-    Element: <App/>,
-    children: [
-      {
-        path:'/',
-        Element: <App/>
-      },
-      {
-        path: '/tictactoe',
-        Element: <TicTacToe/>
-      },
-    ]
-  }
-])
 
-ReactDOM.createRoot(document.getElementById('root')).render(
-  <RouterProvider router={router}>
-    <App/>
-  </RouterProvider>
-)
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <Router>
-          <TittleMessage />
+        <TittleMessage />
+        <BrowserRouter>
           <Navbar />
-          <MyButton />
-          <DisplayMath />
-          <AnotherRandomMessage />
-          <AboutPage />
-          <DataDisplay />
-          <ShoppingList />
-          <AnotherButton />
-          <ButtonTwo />
-          <Game />
-          <Whynow />
-          {/* <TicTacToe /> */}
-          <ThinkingInReact />
-        </Router>
+          <Routes>
+            <Route path="/"/>
+            <Route path="/tictactoe" element={<TicTacToe />} />
+            <Route path="/thinkinginreact" element={<ThinkingInReact />} />
+          </Routes>
+        </BrowserRouter>
+        <MyButton />
+        <DisplayMath />
+        <AnotherRandomMessage />
+        <AboutPage />
+        <DataDisplay />
+        <ShoppingList />
+        <AnotherButton />
+        <ButtonTwo />
+        <Game />
+        <Whynow />
+        {/* <TicTacToe /> */}
       </header>
     </div>
   );
