@@ -1,11 +1,12 @@
 // import logo from "./logo.svg";
 import { useState } from "react";
+import ReactDOM from "react-dom/client";
 import "./App.css";
 import Game from "./Game";
 import Whynow from "./Whynow";
 import TicTacToe from "./TicTacToe";
 import Navbar from "./Navbar";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes, RouterProvider,createBrowserRouter, Outlet } from "react-router-dom";
 import ThinkingInReact from "./ThinkingReact";
 
 function MyButton() {
@@ -100,6 +101,29 @@ function ButtonTwo() {
   return <button onClick={handleClick}>Clicked {count} times</button>;
 }
 
+const router = createBrowserRouter([
+  {
+    path: '/',
+    Element: <App/>,
+    children: [
+      {
+        path:'/',
+        Element: <App/>
+      },
+      {
+        path: '/tictactoe',
+        Element: <TicTacToe/>
+      },
+    ]
+  }
+])
+
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <RouterProvider router={router}>
+    <App/>
+  </RouterProvider>
+)
+
 function App() {
   return (
     <div className="App">
@@ -107,9 +131,6 @@ function App() {
         <Router>
           <TittleMessage />
           <Navbar />
-          <Routes>
-            <Route path="/thinkingreact" element={<Navbar />} />
-          </Routes>
           <MyButton />
           <DisplayMath />
           <AnotherRandomMessage />
@@ -120,7 +141,7 @@ function App() {
           <ButtonTwo />
           <Game />
           <Whynow />
-          <TicTacToe />
+          {/* <TicTacToe /> */}
           <ThinkingInReact />
         </Router>
       </header>
