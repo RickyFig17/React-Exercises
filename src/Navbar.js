@@ -13,7 +13,7 @@ function Navbar() {
             <Link to="/tictactoe">Tic Tac Toe</Link>
           </li>
           <li>
-            <Link to="/list">Produce List</Link>
+            <Link to="/thinkinginreact">Produce List</Link>
           </li>
         </ul>
       </nav>
