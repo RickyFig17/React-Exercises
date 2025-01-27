@@ -1,18 +1,16 @@
 // import logo from "./logo.svg";
 import { useState } from "react";
-import ReactDOM from "react-dom/client";
 import "./App.css";
 import Game from "./Game";
 import Whynow from "./Whynow";
 import TicTacToe from "./TicTacToe";
 import Navbar from "./Navbar";
+import DataDisplay from "./DataDisplay";
+import AboutPage from "./About";
 import {
   BrowserRouter as Router,
   Route,
   Routes,
-  RouterProvider,
-  createBrowserRouter,
-  Outlet,
   BrowserRouter,
 } from "react-router-dom";
 import ThinkingInReact from "./ThinkingReact";
@@ -35,42 +33,9 @@ function AnotherRandomMessage() {
   return message;
 }
 
-// This is the markup syntax called JSX. It is stricter than HTML.
-// You can only use it once per function and you have to wrap them into a shared parent, like a <div></div> or an empty wrapper <></>
-function AboutPage() {
-  return (
-    <>
-      <h1>About</h1>
-      <p>
-        Hello there. <br />
-        How do you do?
-      </p>
-    </>
-  );
-}
 
-function DataDisplay() {
-  const user = {
-    name: "Hedy Lamarr",
-    imageUrl: "https://i.imgur.com/yXOvdOSs.jpg",
-    imageSize: 90,
-  };
 
-  return (
-    <>
-      <h1>{user.name}</h1>
-      <img
-        className="avatar"
-        src={user.imageUrl}
-        alt={"Photo of " + user.name}
-        style={{
-          width: user.imageSize,
-          height: user.imageSize,
-        }}
-      />
-    </>
-  );
-}
+
 
 const products = [
   { title: "Cabbage", isFruit: false, id: 1 },
@@ -122,13 +87,15 @@ function App() {
             <Route path="/"/>
             <Route path="/tictactoe" element={<TicTacToe />} />
             <Route path="/thinkinginreact" element={<ThinkingInReact />} />
+            <Route path="/datadisplay" element={<DataDisplay />}/>
+            <Route path="/aboutpage" element={<AboutPage />}/>
           </Routes>
         </BrowserRouter>
         <MyButton />
         <DisplayMath />
         <AnotherRandomMessage />
-        <AboutPage />
-        <DataDisplay />
+        
+        
         <ShoppingList />
         <AnotherButton />
         <ButtonTwo />

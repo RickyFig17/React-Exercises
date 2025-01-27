@@ -15,6 +15,12 @@ function Navbar() {
           <li>
             <Link to="/thinkinginreact">Produce List</Link>
           </li>
+          <li>
+            <Link to="/datadisplay">Profile</Link>
+          </li>
+          <li>
+            <Link to="/aboutpage">About</Link>
+          </li>
         </ul>
       </nav>
     </>
