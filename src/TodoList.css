@@ -1,0 +1,9 @@
+ul {
+   width: 100%;
+   display: flex;
+}
+
+li {
+    display: flex;
+    justify-content: space-evenly;
+}
