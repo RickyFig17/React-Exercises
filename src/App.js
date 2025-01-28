@@ -14,6 +14,7 @@ import {
   BrowserRouter,
 } from "react-router-dom";
 import ThinkingInReact from "./ThinkingReact";
+import TodoList from "./TodoList";
 
 function MyButton() {
   return <button>I'm a button</button>;
@@ -32,10 +33,6 @@ function AnotherRandomMessage() {
     "This is scary and uncomfortable but I know I'll be successful at it. This is my time!";
   return message;
 }
-
-
-
-
 
 const products = [
   { title: "Cabbage", isFruit: false, id: 1 },
@@ -74,8 +71,6 @@ function ButtonTwo() {
   return <button onClick={handleClick}>Clicked {count} times</button>;
 }
 
-
-
 function App() {
   return (
     <div className="App">
@@ -84,18 +79,18 @@ function App() {
         <BrowserRouter>
           <Navbar />
           <Routes>
-            <Route path="/"/>
+            <Route path="/" />
             <Route path="/tictactoe" element={<TicTacToe />} />
             <Route path="/thinkinginreact" element={<ThinkingInReact />} />
-            <Route path="/datadisplay" element={<DataDisplay />}/>
-            <Route path="/aboutpage" element={<AboutPage />}/>
+            <Route path="/datadisplay" element={<DataDisplay />} />
+            <Route path="/aboutpage" element={<AboutPage />} />
+            <Route path="/todolist" element={<TodoList />} />
           </Routes>
         </BrowserRouter>
         <MyButton />
         <DisplayMath />
         <AnotherRandomMessage />
-        
-        
+
         <ShoppingList />
         <AnotherButton />
         <ButtonTwo />

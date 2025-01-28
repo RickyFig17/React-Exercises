@@ -21,6 +21,9 @@ function Navbar() {
           <li>
             <Link to="/aboutpage">About</Link>
           </li>
+          <li>
+            <Link to="/todolist">Todo List</Link>
+          </li>
         </ul>
       </nav>
     </>
