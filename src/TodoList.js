@@ -6,6 +6,8 @@ function TodoList() {
     { id: 1, text: "learn React", completed: false },
     { id: 2, text: "Build a project", completed: false },
     { id: 3, text: "Practice daily", completed: false },
+    { id: 4, text: "Workout everyday", completed: false },
+    { id: 5, text: "Play music daily", completed: false },
   ]);
 
   const toggleTask = (id) => {
