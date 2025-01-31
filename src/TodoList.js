@@ -8,6 +8,7 @@ function TodoList() {
     { id: 3, text: "Practice daily", completed: false },
     { id: 4, text: "Workout everyday", completed: false },
     { id: 5, text: "Play music daily", completed: false },
+    { id: 6, text: "Develop positive habits", completed: false },
   ]);
 
   const toggleTask = (id) => {
